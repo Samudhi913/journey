@@ -17,11 +17,18 @@ function timeAgo(date) {
 
 export default function FeedPage() {
   const [listings, setListings] = useState([]);
+  const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     getListings().then(res => setListings(res.data));
   }, []);
+
+   const filtered = listings.filter(l =>
+    l.title.toLowerCase().includes(search.toLowerCase()) ||
+    l.location.toLowerCase().includes(search.toLowerCase()) ||
+    l.description.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="feed-page">
@@ -30,6 +37,14 @@ export default function FeedPage() {
         <h1> Discover Worldwide Experiences</h1>
         <p>Find unique travel experiences from around the world</p>
       </div>
+
+      <input
+        className="search-input"
+        placeholder="🔍 Search by title, location or description..."
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+      />
+
       {listings.length === 0 ? (
         <p className="feed-empty">No listings yet. Be the first to share an experience!</p>
       ) : (

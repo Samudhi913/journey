@@ -49,7 +49,7 @@ export default function FeedPage() {
         <p className="feed-empty">No listings yet. Be the first to share an experience!</p>
       ) : (
         <div className="feed-grid">
-          {listings.map(l => (
+          {filtered.map(l => (
             <div key={l._id} className="card" onClick={() => navigate(`/listing/${l._id}`)}>
               <img
                 src={l.imageUrl}

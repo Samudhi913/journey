@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getListing } from '../api';
+import { getListing, deleteListing } from '../api';
 import { useAuth } from '../context/AuthContext';
 import '../styles/ListingDetailPage.css';
 

@@ -40,4 +40,21 @@ router.post('/', auth, async (req, res) => {
   }
 });
 
+// DELETE listing (protected)
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const listing = await Listing.findById(req.params.id);
+    if (!listing) return res.status(404).json({ message: 'Listing not found' });
+
+    if (listing.createdBy.toString() !== req.user.id) {
+      return res.status(403).json({ message: 'Not authorized' });
+    }
+
+    await listing.deleteOne();
+    res.json({ message: 'Listing deleted' });
+  } catch (err) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 module.exports = router;

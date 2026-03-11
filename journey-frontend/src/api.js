@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://journey-backend-fnop.onrender.com' });
+const API = axios.create({ baseURL: 'https://journey-backend-fnop.onrender.com/api' });
 
 // Automatically attach token to every request if logged in
 API.interceptors.request.use((req) => {

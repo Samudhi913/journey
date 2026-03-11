@@ -14,7 +14,7 @@ export default function ListingDetailPage() {
     getListing(id).then(res => setListing(res.data));
   }, [id]);
 
-   const handleDelete = async () => {
+  const handleDelete = async () => {
     if (!window.confirm('Are you sure you want to delete this listing?')) return;
     try {
       await deleteListing(id);
@@ -42,18 +42,18 @@ export default function ListingDetailPage() {
           <h1 className="detail-title">{listing.title}</h1>
           <p className="detail-location">📍 {listing.location}</p>
         </div>
-          {isOwner && (
-            <div className="detail-actions">
-              <button className="btn-edit" onClick={() => navigate(`/edit/${listing._id}`)}>Edit</button>
-              <button className="btn-delete" onClick={handleDelete}>Delete</button>
-            </div>
-          )}
+        {isOwner && (
+          <div className="detail-actions">
+            <button className="btn-edit" onClick={() => navigate(`/edit/${listing._id}`)}>Edit</button>
+            <button className="btn-delete" onClick={handleDelete}>Delete</button>
+          </div>
+        )}
       </div>
       {listing.price && <p className="detail-price">💰 {listing.price}</p>}
       <p className="detail-desc">{listing.description}</p>
       <div className="detail-meta">
-        <span>Posted by {listing.createdBy?.username}</span>
-        <span>{new Date(listing.createdAt).toLocaleDateString()}</span>
+        <span>👤 Posted by {listing.createdBy?.username}</span>
+        <span>🕒 {new Date(listing.createdAt).toLocaleDateString()}</span>
       </div>
     </div>
   );

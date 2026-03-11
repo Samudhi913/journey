@@ -95,7 +95,7 @@ Listings are stored in a MongoDB Atlas collection using a Mongoose schema with t
 ### One improvement I would implement with more time
 I would add image upload support instead of requiring an image URL. Currently users must provide an external image link, which is not intuitive. I would integrate a service like Cloudinary to allow direct image uploads from the create listing form, storing only the returned image URL in the database. This would make the platform significantly easier to use for non-technical users.
 
-I would also add features such as editing the listings, a search option, a sorting option based on the location, pricing and experience. This would allow the users to easily sort out what they are specifically searching for. I would also add a favourites tab to allow them to keep their most favourite experiences separately and come back to them easily in the future.
+I would also add features such as responsive mobile UI which would help the user to view through the mobile easily. I would also add a favourites tab to allow them to keep their most favourite experiences separately and come back to them easily in the future.
 
 ---
 

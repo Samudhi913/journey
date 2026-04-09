@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +7,10 @@
 }
 
 body {
-  background-color: #f0f4f8;
+  background-color: #f8fafc;
   color: #0f172a;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -17,13 +20,15 @@ a {
 
 input, textarea {
   background-color: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 1.5px solid #e2e8f0;
   color: #0f172a;
-  padding: 10px 14px;
-  border-radius: 8px;
+  padding: 11px 14px;
+  border-radius: 10px;
   width: 100%;
   font-size: 15px;
+  font-family: 'Inter', sans-serif;
   outline: none;
+  transition: border-color 0.2s;
 }
 
 input::placeholder, textarea::placeholder {
@@ -32,12 +37,15 @@ input::placeholder, textarea::placeholder {
 
 input:focus, textarea:focus {
   border-color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.08);
 }
 
 button {
   cursor: pointer;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 15px;
+  font-family: 'Inter', sans-serif;
   padding: 10px 20px;
+  transition: all 0.2s;
 }

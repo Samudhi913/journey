@@ -1,53 +1,63 @@
 .navbar {
-  background-color: #0a2342;
-  padding: 14px 40px;
+  background-color: #0a1628;
+  padding: 16px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #1e3a5f;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
 }
 
 .navbar-logo {
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 800;
   color: #ffffff;
   text-decoration: none;
-}
-
-
-.plane-icon {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  vertical-align: middle;
-  margin-right: 10px;
+  letter-spacing: -0.5px;
 }
 
 .navbar-links {
   display: flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
 }
 
 .navbar-greeting {
-  color: #93c5fd;
-  font-size: 20px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .btn-primary {
   background-color: #1d4ed8;
   color: #fff;
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-size: 15px;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
   border: none;
   cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
   background-color: transparent;
-  color: #cbd5e1;
-  font-size: 15px;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
   border: none;
   cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-ghost:hover {
+  color: #ffffff;
 }
